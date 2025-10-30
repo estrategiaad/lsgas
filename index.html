@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LS Gás - Supergasbras | Gás residencial e industrial</title>
+    <title>Líder Gás Supergasbras | Gás em Brasília e Riacho Fundo - Entrega Rápida</title>
+    <meta name="description" content="Peça seu gás de cozinha ou industrial da Líder Gás Supergasbras em Brasília, Riacho Fundo, Taguatinga e Águas Claras. Entrega rápida em até 1 hora.">
+    <meta name="keywords" content="gás brasília, gás riacho fundo, gás taguatinga, gás águas claras, gás vicente pires, entrega de gás, supergasbras brasília, líder gás">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -30,27 +34,48 @@
         .faq-item[open] .faq-arrow {
             transform: rotate(180deg);
         }
+        /* Remove o CSS antigo do slider */
         .testimonial-slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-        }
-        .testimonial-slider::-webkit-scrollbar {
-            display: none; /* Safari and Chrome */
+            /* Estilos antigos removidos */
         }
         .testimonial-slide {
-            flex: 0 0 100%;
-            scroll-snap-align: start;
+             /* Estilos antigos removidos */
         }
+
+        /* Estilos do Swiper */
+        .swiper-container {
+            width: 100%;
+            padding-bottom: 50px; /* Espaço para os pontos */
+        }
+        .swiper-slide {
+            height: auto; /* Garante que os slides tenham a mesma altura */
+            display: flex;
+        }
+        .swiper-pagination-bullet {
+            background: #ccc;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+            background: #D33100;
+        }
+
         @media (min-width: 768px) {
-            .testimonial-slider {
-                overflow-x: visible;
-            }
-            .testimonial-slide {
-                flex: 1 1 0px;
-            }
+             /* Remove o grid do CSS e deixa o Swiper controlar */
+        }
+        
+        /* Hero Image Slider */
+        .hero-slider-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .hero-slider-image.active {
+            opacity: 1;
         }
     </style>
 </head>
@@ -61,10 +86,10 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-xl font-bold text-gray-900">LS Gás <span class="text-[#D33100]">-</span> <span class="font-light text-blue-800">Supergasbras</span></a>
+                    <a href="#" class="text-xl font-bold text-gray-900">Líder Gás <span class="text-[#D33100]">-</span> <span class="font-light text-blue-800">Supergasbras</span></a>
                 </div>
                 <nav class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-[#D33100] transition-colors">Serviços</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-[#D33100] transition-colors">Depoimentos</a>
                     <a href="#features" class="text-gray-600 hover:text-[#D33100] transition-colors">Produtos</a>
                     <a href="#why-choose" class="text-gray-600 hover:text-[#D33100] transition-colors">Sobre nós</a>
                     <a href="#faq" class="text-gray-600 hover:text-[#D33100] transition-colors">FAQ</a>
@@ -81,7 +106,7 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
-            <a href="#features" class="block text-gray-600 hover:text-[#D33100] transition-colors py-2">Serviços</a>
+            <a href="#testimonials" class="block text-gray-600 hover:text-[#D33100] transition-colors py-2">Depoimentos</a>
             <a href="#features" class="block text-gray-600 hover:text-[#D33100] transition-colors py-2">Produtos</a>
             <a href="#why-choose" class="block text-gray-600 hover:text-[#D33100] transition-colors py-2">Sobre nós</a>
             <a href="#faq" class="block text-gray-600 hover:text-[#D33100] transition-colors py-2">FAQ</a>
@@ -98,7 +123,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center lg:text-left" data-aos="fade-right">
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-                            Gás residencial e industrial à pronta entrega
+                            Gás residencial e industrial em Brasília à pronta entrega
                         </h1>
                         <p class="text-lg md:text-xl text-blue-800 mb-8">
                             10.000+ clientes satisfeitos em Brasília e região.
@@ -116,23 +141,145 @@
                         </p>
                     </div>
                     <div class="relative" data-aos="fade-left" data-aos-delay="200">
-                         <div class="aspect-w-4 aspect-h-3">
-                            <img src="gas.jpg" alt="Entrega de gás rápida e segura" class="rounded-2xl shadow-2xl object-cover w-full h-full transform lg:rotate-3 hover:rotate-0 transition-transform duration-500">
+                         <div class="aspect-w-4 aspect-h-3 rounded-2xl shadow-2xl overflow-hidden transform lg:rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <!-- Image Slider Container -->
+                            <div id="hero-image-slider" class="relative w-full h-full">
+                                <img src="gas1.webp" alt="Entrega de gás em Brasília 1" class="hero-slider-image active" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Líder+Gás+1';">
+                                <img src="gas2.webp" alt="Entrega de gás em Brasília 2" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Líder+Gás+2';">
+                                <img src="gas3.webp" alt="Entrega de gás em Brasília 3" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Líder+Gás+3';">
+                                <img src="gas4.webp" alt="Entrega de gás em Brasília 4" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Líder+Gás+4';">
+                                <img src="gas5.webp" alt="Entrega de gás em Brasília 5" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Líder+Gás+5';">
+                                <img src="gas6.webp" alt="Entrega de gás em Brasília 6" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Líder+Gás+6';">
+                                <img src="gas7.webp" alt="Entrega de gás em Brasília 7" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Líder+Gás+7';">
+                                <img src="gas8.webp" alt="Entrega de gás em Brasília 8" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Líder+Gás+8';">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Credibility Logos -->
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
-                <div class="flex justify-center">
-                    <img src="logo.jpg" alt="Logo Supergasbras" class="h-12 md:h-16 opacity-80" onerror="this.onerror=null;this.src='https://placehold.co/300x80/FFFFFF/0A2A4E?text=Logo+Supergasbras';">
+        <!-- 2. Testimonials Section -->
+        <section class="py-20 bg-gray-50" id="testimonials">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">O que nossos clientes dizem</h2>
+                    <p class="mt-4 text-lg text-gray-600">A satisfação de quem confia em nosso trabalho.</p>
+                </div>
+                <!-- Swiper.js Carousel -->
+                <div class="swiper-container testimonial-slider" data-aos="fade-up">
+                    <div class="swiper-wrapper">
+                        <!-- Testimonial 1 -->
+                        <div class="swiper-slide testimonial-slide p-2">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=LS" alt="Avatar de Lucas Sousa" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=LS';">
+                                    <div class="flex-1">
+                                        <div class="text-yellow-500 flex">★★★★★</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-gray-600 italic flex-grow">"A melhor de Brasília, ótimo preço e atendimento top!"</blockquote>
+                                <cite class="mt-4 font-semibold text-gray-900 not-italic">- Lucas Sousa</cite>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="swiper-slide testimonial-slide p-2">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=RS" alt="Avatar de Rayane Santos" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=RS';">
+                                    <div class="flex-1">
+                                        <div class="text-yellow-500 flex">★★★★★</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-gray-600 italic flex-grow">"Ótimo atendimento e super atenciosos. Foram super atenciosos, me trazendo o gás em 20 minutos! Amei."</blockquote>
+                                <cite class="mt-4 font-semibold text-gray-900 not-italic">- Rayane Santos</cite>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="swiper-slide testimonial-slide p-2">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=MM" alt="Avatar de Matheus Martins" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=MM';">
+                                    <div class="flex-1">
+                                        <div class="text-yellow-500 flex">★★★★★</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-gray-600 italic flex-grow">"Atendimento especializado, entrega rápida, suporte ao cliente de qualidade, recomendo a todos!"</blockquote>
+                                <cite class="mt-4 font-semibold text-gray-900 not-italic">- Matheus Martins</cite>
+                            </div>
+                        </div>
+                        <!-- Testimonial 4 (Novo) -->
+                        <div class="swiper-slide testimonial-slide p-2">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=DO" alt="Avatar de Delainy Oliveira" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=DO';">
+                                    <div class="flex-1">
+                                        <div class="text-yellow-500 flex">★★★★★</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-gray-600 italic flex-grow">"Excelente atendimento! O Ailton é super atencioso, entrega rápida e com muito profissionalismo. Além disso, o gás é de ótima qualidade e confiável. Recomendo de olhos fechados!"</blockquote>
+                                <cite class="mt-4 font-semibold text-gray-900 not-italic">- Delainy Oliveira</cite>
+                            </div>
+                        </div>
+                        <!-- Testimonial 5 (Novo) -->
+                        <div class="swiper-slide testimonial-slide p-2">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=DA" alt="Avatar de Dayse Arcanjo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=DA';">
+                                    <div class="flex-1">
+                                        <div class="text-yellow-500 flex">★★★★★</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-gray-600 italic flex-grow">"Atendimento e entrega super rápidos. Melhor preço da região!!"</blockquote>
+                                <cite class="mt-4 font-semibold text-gray-900 not-italic">- Dayse Arcanjo</cite>
+                            </div>
+                        </div>
+                        <!-- Testimonial 6 (Novo) -->
+                        <div class="swiper-slide testimonial-slide p-2">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=MD" alt="Avatar de Maria da Guia" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=MD';">
+                                    <div class="flex-1">
+                                        <div class="text-yellow-500 flex">★★★★★</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-gray-600 italic flex-grow">"Wemerson fez um ótimo atendimento e entrega super rápida, não é à toa que sempre pego com vcs."</blockquote>
+                                <cite class="mt-4 font-semibold text-gray-900 not-italic">- Maria da Guia</cite>
+                            </div>
+                        </div>
+                        <!-- Testimonial 7 (Novo) -->
+                        <div class="swiper-slide testimonial-slide p-2">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=RS" alt="Avatar de Rosiane Soares" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=RS';">
+                                    <div class="flex-1">
+                                        <div class="text-yellow-500 flex">★★★★★</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-gray-600 italic flex-grow">"Sou cliente a um tempo, gosto do atendimento, da agilidade e preço super recomendo."</blockquote>
+                                <cite class="mt-4 font-semibold text-gray-900 not-italic">- Rosiane Soares</cite>
+                            </div>
+                        </div>
+                        <!-- Testimonial 8 (Novo) -->
+                        <div class="swiper-slide testimonial-slide p-2">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=AA" alt="Avatar de Amanda Alves" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=AA';">
+                                    <div class="flex-1">
+                                        <div class="text-yellow-500 flex">★★★★★</div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-gray-600 italic flex-grow">"Só faço pedido na Líder Gás, atendimento eficiente e de qualidade, os produtos são bons e o atendimento é diferenciado!"</blockquote>
+                                <cite class="mt-4 font-semibold text-gray-900 not-italic">- Amanda Alves</cite>
+</div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
-
+     
         <!-- 3. Features Section -->
         <section id="features" class="py-20 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,7 +322,7 @@
         <section id="why-choose" class="py-20 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Por que escolher a LS Gás?</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Por que escolher a Líder Gás?</h2>
                     <p class="mt-4 text-lg text-gray-600">Compromisso e qualidade em cada entrega.</p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -215,58 +362,7 @@
             </div>
         </section>
 
-        <!-- 5. Testimonials Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">O que nossos clientes dizem</h2>
-                    <p class="mt-4 text-lg text-gray-600">A satisfação de quem confia em nosso trabalho.</p>
-                </div>
-                <div class="testimonial-slider md:grid md:grid-cols-3 md:gap-8" data-aos="fade-up">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-slide p-2">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col">
-                            <div class="flex items-center mb-4">
-                                <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=LS" alt="Avatar de Lucas Sousa">
-                                <div class="flex-1">
-                                    <div class="text-yellow-500 flex">★★★★★</div>
-                                </div>
-                            </div>
-                            <blockquote class="text-gray-600 italic flex-grow">"A melhor de Brasília, ótimo preço e atendimento top!"</blockquote>
-                            <cite class="mt-4 font-semibold text-gray-900 not-italic">- Lucas Sousa</cite>
-                        </div>
-                    </div>
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-slide p-2">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col">
-                            <div class="flex items-center mb-4">
-                                <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=RS" alt="Avatar de Rayane Santos">
-                                <div class="flex-1">
-                                    <div class="text-yellow-500 flex">★★★★★</div>
-                                </div>
-                            </div>
-                            <blockquote class="text-gray-600 italic flex-grow">"Ótimo atendimento e super atenciosos. Foram super atenciosos, me trazendo o gás em 20 minutos! Amei."</blockquote>
-                            <cite class="mt-4 font-semibold text-gray-900 not-italic">- Rayane Santos</cite>
-                        </div>
-                    </div>
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-slide p-2">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col">
-                            <div class="flex items-center mb-4">
-                                <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=MM" alt="Avatar de Matheus Martins">
-                                <div class="flex-1">
-                                    <div class="text-yellow-500 flex">★★★★★</div>
-                                </div>
-                            </div>
-                            <blockquote class="text-gray-600 italic flex-grow">"Atendimento especializado, entrega rápida, suporte ao cliente de qualidade, recomendo a todos!"</blockquote>
-                            <cite class="mt-4 font-semibold text-gray-900 not-italic">- Matheus Martins</cite>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. FAQ Section -->
+        <!-- 5. FAQ Section -->
         <section id="faq" class="py-20 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="max-w-3xl mx-auto">
@@ -305,12 +401,22 @@
                             </summary>
                             <p class="mt-4 text-gray-600">Sim, fazemos entregas de segunda-feira a sábado, para sua maior comodidade.</p>
                         </details>
+                        <!-- FAQ Item 4 - SEO Local -->
+                        <details class="faq-item group bg-gray-50 p-6 rounded-lg">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h3 class="text-lg font-semibold text-gray-900">Qual o endereço da Líder Gás?</h3>
+                                <span class="faq-arrow text-gray-500 transform transition-transform duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </span>
+                            </summary>
+                            <p class="mt-4 text-gray-600">Nossa unidade principal está localizada em Riacho Fundo II - 1A Etapa QN 7D CONJUNTO 4 LOTE 08 - Riacho Fundo II, Brasília - DF, 71880-044. Mas não se preocupe, entregamos rapidamente em toda a sua região!</p>
+                        </details>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. Final CTA -->
+        <!-- 6. Final CTA -->
         <section id="final-cta" class="cta-gradient text-white py-20 overflow-hidden">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -327,28 +433,42 @@
                         </div>
                     </div>
                     <div class="flex justify-center" data-aos="fade-left" data-aos-delay="200">
-                        <img src="https://placehold.co/300x600/FFFFFF/0A2A4E?text=App+Mockup" alt="Mockup do aplicativo LS Gás" class="w-auto h-96 rounded-2xl shadow-2xl transform md:rotate-6">
+                        <img src="https://placehold.co/300x600/FFFFFF/0A2A4E?text=App+Mockup" alt="Mockup do aplicativo Líder Gás" class="w-auto h-96 rounded-2xl shadow-2xl transform md:rotate-6">
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 8. Footer -->
+    <!-- 7. Footer -->
     <footer class="bg-gray-900 text-gray-400">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="flex flex-col sm:flex-row justify-between items-center">
-                <p>&copy; 2025 LS Gás - Supergasbras. Todos os direitos reservados.</p>
-                <div class="flex space-x-4 mt-4 sm:mt-0">
-                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
-                    <a href="#" class="hover:text-white transition-colors">Facebook</a>
-                    <a href="#" class="hover:text-white transition-colors">Google Maps</a>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Líder Gás - Supergasbras</h4>
+                    <p>&copy; 2025 Todos os direitos reservados.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Nossa Unidade</h4>
+                    <p>Riacho Fundo II - 1A Etapa</p>
+                    <p>QN 7D CONJUNTO 4 LOTE 08</p>
+                    <p>Brasília - DF, 71880-044</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Siga-nos</h4>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                        <a href="#" class="hover:text-white transition-colors">Facebook</a>
+                        <a href="https://www.google.com/search?q=rafagas+Riacho+Fundo+II+-+1A+Etapa+QN+7D+CONJUNTO+4+LOTE+08+-+Riacho+Fundo+II%2C+Bras%C3%ADlia+-+DF%2C+71880-044" target="_blank" rel="noopener" class="hover:text-white transition-colors">Google Maps</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         AOS.init({
             duration: 800,
@@ -371,6 +491,56 @@
             });
         });
 
+        // Swiper Initialization
+        var swiper = new Swiper('.testimonial-slider', {
+            /* loop: true, */ /* Removido para funcionar com slidesPerGroup */
+            rewind: true, // Faz o carrossel reiniciar no 'autoplay'
+            slidesPerView: 1,
+            spaceBetween: 16,
+            slidesPerGroup: 2, // Agrupa de 2 em 2 no mobile
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                // when window width is >= 768px
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                    slidesPerGroup: 2 // Agrupa de 2 em 2 no tablet
+                },
+                // when window width is >= 1024px
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 32,
+                    slidesPerGroup: 3 // Agrupa de 3 em 3 no desktop
+                }
+            }
+        });
+
+        // Hero Image Slider Logic
+        (function() {
+            let currentImageIndex = 0;
+            const images = document.querySelectorAll('.hero-slider-image');
+            if (images.length === 0) return;
+            const totalImages = images.length;
+
+            setInterval(() => {
+                if (images[currentImageIndex]) {
+                    images[currentImageIndex].classList.remove('active');
+                }
+                currentImageIndex = (currentImageIndex + 1) % totalImages;
+                if (images[currentImageIndex]) {
+                    images[currentImageIndex].classList.add('active');
+                }
+            }, 3000); // 3 seconds
+        })();
+
     </script>
 </body>
 </html>
+
