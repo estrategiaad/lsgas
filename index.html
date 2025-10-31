@@ -507,29 +507,29 @@
         var swiper = new Swiper('.testimonial-slider', {
             /* loop: true, */ /* Removido para funcionar com slidesPerGroup */
             rewind: true, // Faz o carrossel reiniciar no 'autoplay'
-            slidesPerView: 1,
+            slidesPerView: 1, // Default: 1 slide no mobile
             spaceBetween: 16,
-            slidesPerGroup: 2, // Agrupa de 2 em 2 no mobile
+            slidesPerGroup: 1, // Default: agrupa de 1 em 1 no mobile
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
             autoplay: {
-                delay: 5000,
+                delay: 8000,
                 disableOnInteraction: false,
             },
             breakpoints: {
                 // when window width is >= 768px
                 768: {
-                    slidesPerView: 2,
+                    slidesPerView: 2, // 2 slides no tablet
                     spaceBetween: 24,
                     slidesPerGroup: 2 // Agrupa de 2 em 2 no tablet
                 },
                 // when window width is >= 1024px
                 1024: {
-                    slidesPerView: 3,
+                    slidesPerView: 2, // 2 slides no desktop
                     spaceBetween: 32,
-                    slidesPerGroup: 3 // Agrupa de 3 em 3 no desktop
+                    slidesPerGroup: 2 // Agrupa de 2 em 2 no desktop
                 }
             }
         });
@@ -555,6 +555,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
