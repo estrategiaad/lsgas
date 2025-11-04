@@ -142,7 +142,8 @@
                         <!-- Logotipo adicionado -->
                         <img src="logo.webp" alt="Logotipo Líder Gás" class="h-10 w-auto mr-2" onerror="this.onerror=null;this.src='https://placehold.co/100x40/0D3B66/FFFFFF?text=Logo';">
                         <!-- Texto original -->
-                        Líder Gás <span class="text-[#D33100]">-</span> <span class="font-light text-blue-800">Supergasbras</span>
+                        <!-- MUDANÇA: Adicionada margem (mx-1) ao hífen para dar espaço -->
+                        Líder Gás <span class="text-[#D33100] mx-1">-</span> <span class="font-light text-[#D33100]">Supergasbras</span>
                     </a>
                 </div>
                 <nav class="hidden md:flex md:items-center md:space-x-8">
@@ -200,7 +201,8 @@
                     <div class="relative" data-aos="fade-left" data-aos-delay="200">
                          <div class="aspect-square rounded-2xl shadow-2xl overflow-hidden">
                             <!-- MUDANÇA: Container de imagem estática para Swiper Carousel -->
-                            <div id="hero-image-slider" class="relative w-full h-full hero-swiper-container swiper-container">
+                            <!-- MUDANÇA: Adicionada a classe 'scale-70' para reduzir o tamanho -->
+                            <div id="hero-image-slider" class="relative w-full h-full hero-swiper-container swiper-container scale-70">
                                 <div class="swiper-wrapper">
                                     <!-- Slide 1 -->
                                     <div class="swiper-slide">
@@ -540,27 +542,37 @@
     <!-- 7. Footer -->
     <footer class="bg-gray-900 text-gray-400">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
+            <!-- MUDANÇA: O grid foi alterado de 3 colunas (md:grid-cols-3) para 2 em tablet (sm:grid-cols-2) e 4 em desktop (lg:grid-cols-4) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
+                <div class="mb-6 md:mb-0">
                     <h4 class="text-lg font-semibold text-white mb-3">Líder Gás - Supergasbras</h4>
                     <p>&copy; 2025 Todos os direitos reservados.</p>
                 </div>
-                <div>
-                    <h4 class="text-lg font-semibold text-white mb-3">Nossas Unidades</h4>
+                
+                <!-- MUDANÇA: O div 'Nossas Unidades' foi dividido em dois, cada um em sua própria coluna -->
+                
+                <!-- Coluna Endereço 1 -->
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold text-white mb-3">Unidade Riacho Fundo II</h4>
                     <!-- Endereço 1 -->
                     <a href="https://maps.app.goo.gl/5R1T2TsYvGJ2XEWb9" target="_blank" rel="noopener" class="inline-block transition-colors hover:text-white">
                         <p>Riacho Fundo II - 1A Etapa</p>
                         <p>QN 7D CONJUNTO 4 LOTE 08</p>
                         <p>Brasília - DF, 71880-044</p>
                     </a>
-                    
+                </div>
+                
+                <!-- Coluna Endereço 2 -->
+                <div class="mb-6 md:mb-0">
+                     <h4 class="text-lg font-semibold text-white mb-3">Unidade Águas Claras</h4>
                     <!-- Endereço 2 -->
-                    <a href="https://maps.app.goo.gl/tuRsNYmh8XUKms618" target="_blank" rel="noopener" class="inline-block transition-colors hover:text-white mt-4">
+                    <a href="https://maps.app.goo.gl/tuRsNYmh8XUKms618" target="_blank" rel="noopener" class="inline-block transition-colors hover:text-white">
                         <p>ADE Águas Claras 10/12</p>
                         <p>Areal, Brasília - DF, 71987-720</p>
                     </a>
                 </div>
-                <div>
+
+                <div class="mb-6 md:mb-0">
                     <h4 class="text-lg font-semibold text-white mb-3">Siga-nos</h4>
                     <div class="flex space-x-4 justify-center md:justify-start">
                         <a href="#" class="hover:text-white transition-colors">Instagram</a>
@@ -573,7 +585,8 @@
         <div class="border-t border-gray-700 py-4">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-center items-center text-sm">
-                    <span>Desenvolvido por</span>
+                    <!-- MUDANÇA: Cor do texto alterada (agora com CSS inline) -->
+                    <span style="color: #D33100;">Desenvolvido por</span>
                     <!-- MUDANÇA: Link do WhatsApp adicionado -->
                     <a href="https://wa.me/5561991390058?text=Ol%C3%A1,+te+encontrei+no+Perfil+do+Google+de+Brasília.+Pode+me+ajudar?" target="_blank" rel="noopener" class="ml-2">
                          <!-- SEO: Lazy Loading -->
@@ -663,5 +676,11 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
