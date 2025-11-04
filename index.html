@@ -6,6 +6,27 @@
     <title>Líder Gás Supergasbras | Gás em Brasília e Riacho Fundo - Entrega Rápida</title>
     <meta name="description" content="Peça seu gás de cozinha ou industrial da Líder Gás Supergasbras em Brasília, Riacho Fundo, Taguatinga e Águas Claras. Entrega rápida em até 1 hora.">
     <meta name="keywords" content="gás brasília, gás riacho fundo, gás taguatinga, gás águas claras, gás vicente pires, entrega de gás, supergasbras brasília, líder gás">
+    
+    <!-- SEO: Canonical URL -->
+    <!-- Substitua pelo seu domínio final -->
+    <link rel="canonical" href="https://www.SEU_DOMINIO_AQUI.com.br">
+
+    <!-- SEO: Open Graph (para WhatsApp, Facebook, etc.) -->
+    <!-- Substitua pelo seu domínio final -->
+    <meta property="og:title" content="Líder Gás Supergasbras | Gás em Brasília e Riacho Fundo">
+    <meta property="og:description" content="Peça seu gás de cozinha ou industrial da Líder Gás Supergasbras em Brasília, Riacho Fundo, Taguatinga e Águas Claras. Entrega rápida.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.SEU_DOMINIO_AQUI.com.br">
+    <meta property="og:image" content="https://www.SEU_DOMINIO_AQUI.com.br/gas1.webp"> <!-- Imagem principal para compartilhamento -->
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- SEO: Twitter Card -->
+    <!-- Substitua pelo seu domínio final -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Líder Gás Supergasbras | Gás em Brasília e Riacho Fundo">
+    <meta name="twitter:description" content="Peça seu gás de cozinha ou industrial em Brasília e região. Entrega rápida.">
+    <meta name="twitter:image" content="https://www.SEU_DOMINIO_AQUI.com.br/gas1.webp">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -43,7 +64,7 @@
         }
 
         /* Estilos do Swiper */
-        .swiper-container {
+        .testimonial-slider.swiper-container { /* MUDANÇA: Seletor mais específico */
             width: 100%;
             padding-bottom: 50px; /* Espaço para os pontos */
             overflow: hidden; /* Corrige o vazamento de layout */
@@ -60,25 +81,55 @@
             background: #D33100;
         }
 
+        /* ADIÇÃO: Estilos do Swiper do Hero */
+        .hero-swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .hero-swiper-container .swiper-pagination {
+            bottom: 20px !important; /* Posição dentro da imagem */
+        }
+        .hero-swiper-container .swiper-pagination-bullet {
+            background: #ffffff;
+            opacity: 0.7;
+            width: 10px;
+            height: 10px;
+        }
+        .hero-swiper-container .swiper-pagination-bullet-active {
+            background: #D33100;
+            opacity: 1;
+        }
+
         @media (min-width: 768px) {
              /* Remove o grid do CSS e deixa o Swiper controlar */
         }
         
-        /* CSS do Hero Image Slider */
-        .hero-slider-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-        }
-        .hero-slider-image.active {
-            opacity: 1;
-        }
+        /* CSS do Hero Image Slider removido */
     </style>
+
+    <!-- SEO: JSON-LD Schema (Dados Estruturados) -->
+    <!-- Substitua pelo seu domínio final e confirme os horários -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Líder Gás Supergasbras",
+      "description": "Distribuidora de Gás GLP residencial e industrial em Brasília e região. Entrega rápida em Riacho Fundo, Taguatinga, Águas Claras e Vicente Pires.",
+      "image": "https://www.SEU_DOMINIO_AQUI.com.br/logo.webp",
+      "telephone": "+55-61-3456-2117",
+      "url": "https://www.SEU_DOMINIO_AQUI.com.br",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Riacho Fundo II - 1A Etapa QN 7D CONJUNTO 4 LOTE 08",
+        "addressLocality": "Brasília",
+        "addressRegion": "DF",
+        "postalCode": "71880-044",
+        "addressCountry": "BR"
+      },
+      "openingHours": "Mo-Sa 08:00-19:00",
+      "priceRange": "R$"
+    }
+    </script>
 </head>
 <body class="text-gray-800">
 
@@ -87,7 +138,12 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-xl font-bold text-gray-900">Líder Gás <span class="text-[#D33100]">-</span> <span class="font-light text-blue-800">Supergasbras</span></a>
+                    <a href="#" class="flex items-center text-xl font-bold text-gray-900">
+                        <!-- Logotipo adicionado -->
+                        <img src="logo.webp" alt="Logotipo Líder Gás" class="h-10 w-auto mr-2" onerror="this.onerror=null;this.src='https://placehold.co/100x40/0D3B66/FFFFFF?text=Logo';">
+                        <!-- Texto original -->
+                        Líder Gás <span class="text-[#D33100]">-</span> <span class="font-light text-blue-800">Supergasbras</span>
+                    </a>
                 </div>
                 <nav class="hidden md:flex md:items-center md:space-x-8">
                     <a href="#testimonials" class="text-gray-600 hover:text-[#D33100] transition-colors">Depoimentos</a>
@@ -142,17 +198,45 @@
                         </p>
                     </div>   
                     <div class="relative" data-aos="fade-left" data-aos-delay="200">
-                         <div class="aspect-w-4 aspect-h-3 rounded-2xl shadow-2xl overflow-hidden">
-                            <!-- Image Slider Container -->
-                            <div id="hero-image-slider" class="relative w-full h-full">
-                                <img src="gas1.webp" alt="Entrega de gás da Líder Gás em Brasília - Imagem 1" class="hero-slider-image active" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+1';">
-                                <img src="gas2.webp" alt="Entrega de gás da Líder Gás em Brasília - Imagem 2" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+2';">
-                                <img src="gas3.webp" alt="Entrega de gás da Líder Gás em Brasília - Imagem 3" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+3';">
-                                <img src="gas4.webp" alt="Entrega de gás da Líder Gás em Brasília - Imagem 4" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+4';">
-                                <img src="gas5.webp" alt="Entrega de gás da Líder Gás em Brasília - Imagem 5" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+5';">
-                                <img src="gas6.webp" alt="Entrega de gás da Líder Gás em Brasília - Imagem 6" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+6';">
-                                <img src="gas7.webp" alt="Entrega de gás da Líder Gás em Brasília - Imagem 7" class="hero-slider-image" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+7';">
-                                <img src="gas8.webp" alt="Entrega de gás da Líder Gás em Brasília - Imagem 8" class="hero-slider-image" onerror="this.onerror=null;this.src='https.placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+8';">
+                         <div class="aspect-square rounded-2xl shadow-2xl overflow-hidden">
+                            <!-- MUDANÇA: Container de imagem estática para Swiper Carousel -->
+                            <div id="hero-image-slider" class="relative w-full h-full hero-swiper-container swiper-container">
+                                <div class="swiper-wrapper">
+                                    <!-- Slide 1 -->
+                                    <div class="swiper-slide">
+                                        <img src="gas1.webp" alt="Entrega de gás da Líder Gás em Brasília" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+1';">
+                                    </div>
+                                    <!-- Slide 2 -->
+                                    <div class="swiper-slide">
+                                        <img src="gas2.webp" alt="Equipe Líder Gás" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+2';">
+                                    </div>
+                                    <!-- Slide 3 -->
+                                    <div class="swiper-slide">
+                                        <img src="gas3.webp" alt="Botijão Supergasbras P13" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+3';">
+                                    </div>
+                                    <!-- Slide 4 -->
+                                    <div class="swiper-slide">
+                                        <img src="gas4.webp" alt="Atendimento ao cliente Líder Gás" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+4';">
+                                    </div>
+                                    <!-- Slide 5 -->
+                                    <div class="swiper-slide">
+                                        <img src="gas5.webp" alt="Entrega rápida Riacho Fundo" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+5';">
+                                    </div>
+                                    <!-- Slide 6 -->
+                                    <div class="swiper-slide">
+                                        <img src="gas6.webp" alt="Gás para comércio e indústria" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+6';">
+                                    </div>
+                                    <!-- Slide 7 -->
+                                    <div class="swiper-slide">
+                                        <img src="gas7.webp" alt="Qualidade Supergasbras" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+7';">
+                                    </div>
+                                    <!-- Slide 8 -->
+                                    <div class="swiper-slide">
+                                        <img src="gas8.webp" alt="Líder Gás em Águas Claras" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+8';">
+                                    </div>
+                                </div>
+                                <!-- ADIÇÃO: Paginação para o Hero Swiper -->
+                                <div class="swiper-pagination"></div>
                             </div>
                         </div>
                     </div>
@@ -174,7 +258,8 @@
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
-                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=LS" alt="Avatar de Lucas Sousa" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=LS';">
+                                    <!-- SEO: Lazy Loading -->
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=LS" alt="Avatar de Lucas Sousa" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=LS';">
                                     <div class="flex-1">
                                         <div class="text-yellow-500 flex">★★★★★</div>
                                     </div>
@@ -187,7 +272,8 @@
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
-                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=RS" alt="Avatar de Rayane Santos" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=RS';">
+                                    <!-- SEO: Lazy Loading -->
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=RS" alt="Avatar de Rayane Santos" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=RS';">
                                     <div class="flex-1">
                                         <div class="text-yellow-500 flex">★★★★★</div>
                                     </div>
@@ -200,7 +286,8 @@
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
-                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=MM" alt="Avatar de Matheus Martins" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=MM';">
+                                    <!-- SEO: Lazy Loading -->
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=MM" alt="Avatar de Matheus Martins" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=MM';">
                                     <div class="flex-1">
                                         <div class="text-yellow-500 flex">★★★★★</div>
                                     </div>
@@ -213,7 +300,8 @@
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
-                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=DO" alt="Avatar de Delainy Oliveira" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=DO';">
+                                    <!-- SEO: Lazy Loading -->
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=DO" alt="Avatar de Delainy Oliveira" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=DO';">
                                     <div class="flex-1">
                                         <div class="text-yellow-500 flex">★★★★★</div>
                                     </div>
@@ -226,7 +314,8 @@
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
-                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=DA" alt="Avatar de Dayse Arcanjo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=DA';">
+                                    <!-- SEO: Lazy Loading -->
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=DA" alt="Avatar de Dayse Arcanjo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=DA';">
                                     <div class="flex-1">
                                         <div class="text-yellow-500 flex">★★★★★</div>
                                     </div>
@@ -239,7 +328,8 @@
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
-                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=MD" alt="Avatar de Maria da Guia" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=MD';">
+                                    <!-- SEO: Lazy Loading -->
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=MD" alt="Avatar de Maria da Guia" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=MD';">
                                     <div class="flex-1">
                                         <div class="text-yellow-500 flex">★★★★★</div>
                                     </div>
@@ -252,7 +342,8 @@
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
-                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=RS" alt="Avatar de Rosiane Soares" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=RS';">
+                                    <!-- SEO: Lazy Loading -->
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=RS" alt="Avatar de Rosiane Soares" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=RS';">
                                     <div class="flex-1">
                                         <div class="text-yellow-500 flex">★★★★★</div>
                                     </div>
@@ -265,14 +356,15 @@
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
-                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=AA" alt="Avatar de Amanda Alves" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=AA';">
+                                    <!-- SEO: Lazy Loading -->
+                                    <img class="w-14 h-14 rounded-full mr-4 object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=AA" alt="Avatar de Amanda Alves" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=AA';">
                                     <div class="flex-1">
                                         <div class="text-yellow-500 flex">★★★★★</div>
                                     </div>
                                 </div>
                                 <blockquote class="text-gray-600 italic flex-grow">"Só faço pedido na Líder Gás, atendimento eficiente e de qualidade, os produtos são bons e o atendimento é diferenciado!"</blockquote>
                                 <cite class="mt-4 font-semibold text-gray-900 not-italic">- Amanda Alves</cite>
-</div>
+                            </div>
                         </div>
                     </div>
                     <!-- Add Pagination -->
@@ -280,7 +372,7 @@
                 </div>
             </div>
         </section>
-     
+      
         <!-- 3. Features Section -->
         <section id="features" class="py-20 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -292,7 +384,8 @@
                 <div class="space-y-8">
                     <!-- Main Card -->
                     <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col md:flex-row items-center gap-8" data-aos="fade-up">
-                        <img src="https://placehold.co/400x300/0D3B66/FFFFFF?text=Gás+GLP+P13" alt="Botijão de Gás GLP P13" class="w-full md:w-1/3 h-auto rounded-xl object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/0D3B66/FFFFFF?text=Gás+P13';">
+                        <!-- SEO: Lazy Loading -->
+                        <img src="p13.webp" alt="Botijão de Gás GLP P13" class="w-full md:w-1/3 h-auto rounded-xl object-cover" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x300/0D3B66/FFFFFF?text=Gás+P13';">
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P13</h3>
                             <p class="text-gray-600 mb-6">O tradicional gás de cozinha, ideal para residências. Seguro, econômico e com a qualidade Supergasbras que você confia.</p>
@@ -303,13 +396,15 @@
                     <!-- Secondary Cards -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
-                             <img src="https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+GLP+P20" alt="Botijão de Gás GLP P20" class="w-full h-48 rounded-xl object-cover mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P20';">
+                             <!-- SEO: Lazy Loading -->
+                            <img src="p20.webp" alt="Botijão de Gás GLP P20" class="w-full h-48 rounded-xl object-cover mb-6" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P20';">
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P20</h3>
                             <p class="text-gray-600 mb-6">Perfeito para empilhadeiras, garantindo maior autonomia e eficiência para a sua operação logística.</p>
                              <a href="https://wa.me/556134562117?text=Ol%C3%A1,+vim+do+Site.+Podem+me+ajudar?" target="_blank" rel="noopener" class="text-[#D33100] font-semibold hover:underline">Saiba mais &rarr;</a>
                         </div>
                         <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
-                            <img src="https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+GLP+P45" alt="Botijão de Gás GLP P45" class="w-full h-48 rounded-xl object-cover mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P45';">
+                            <!-- SEO: Lazy Loading -->
+                            <img src="p45.webp" alt="Botijão de Gás GLP P45" class="w-full h-48 rounded-xl object-cover mb-6" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P45';">
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P45</h3>
                             <p class="text-gray-600 mb-6">A solução para comércios e indústrias com alto consumo, como restaurantes e padarias. Mais potência e durabilidade.</p>
                              <a href="https://wa.me/556134562117?text=Ol%C3%A1,+vim+do+Site.+Podem+me+ajudar?" target="_blank" rel="noopener" class="text-[#D33100] font-semibold hover:underline">Consulte &rarr;</a>
@@ -434,7 +529,8 @@
                         </div>
                     </div>
                     <div class="flex justify-center" data-aos="fade-left" data-aos-delay="200">
-                        <img src="app.webp" alt="Mockup do aplicativo Líder Gás" class="w-auto h-96 rounded-2xl shadow-2xl transform md:rotate-6">
+                        <!-- SEO: Lazy Loading -->
+                        <img src="app.webp" alt="Mockup do aplicativo Líder Gás" class="w-auto h-96 rounded-2xl shadow-2xl transform md:rotate-6" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -450,17 +546,25 @@
                     <p>&copy; 2025 Todos os direitos reservados.</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold text-white mb-3">Nossa Unidade</h4>
-                    <p>Riacho Fundo II - 1A Etapa</p>
-                    <p>QN 7D CONJUNTO 4 LOTE 08</p>
-                    <p>Brasília - DF, 71880-044</p>
+                    <h4 class="text-lg font-semibold text-white mb-3">Nossas Unidades</h4>
+                    <!-- Endereço 1 -->
+                    <a href="https://maps.app.goo.gl/5R1T2TsYvGJ2XEWb9" target="_blank" rel="noopener" class="inline-block transition-colors hover:text-white">
+                        <p>Riacho Fundo II - 1A Etapa</p>
+                        <p>QN 7D CONJUNTO 4 LOTE 08</p>
+                        <p>Brasília - DF, 71880-044</p>
+                    </a>
+                    
+                    <!-- Endereço 2 -->
+                    <a href="https://maps.app.goo.gl/tuRsNYmh8XUKms618" target="_blank" rel="noopener" class="inline-block transition-colors hover:text-white mt-4">
+                        <p>ADE Águas Claras 10/12</p>
+                        <p>Areal, Brasília - DF, 71987-720</p>
+                    </a>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-3">Siga-nos</h4>
                     <div class="flex space-x-4 justify-center md:justify-start">
                         <a href="#" class="hover:text-white transition-colors">Instagram</a>
                         <a href="#" class="hover:text-white transition-colors">Facebook</a>
-                        <a href="https://www.google.com/search?q=rafagas+Riacho+Fundo+II+-+1A+Etapa+QN+7D+CONJUNTO+4+LOTE+08+-+Riacho+Fundo+II%2C+Bras%C3%A1lia+-+DF%2C+71880-044" target="_blank" rel="noopener" class="hover:text-white transition-colors">Google Maps</a>
                     </div>
                 </div>
             </div>
@@ -470,8 +574,10 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-center items-center text-sm">
                     <span>Desenvolvido por</span>
-                    <a href="#" target="_blank" rel="noopener" class="ml-2">
-                        <img src="logoE.webp" alt="Logo Desenvolvedor" class="h-6 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/100x24/4A5568/FFFFFF?text=LogoE';">
+                    <!-- MUDANÇA: Link do WhatsApp adicionado -->
+                    <a href="https://wa.me/5561991390058?text=Ol%C3%A1,+te+encontrei+no+Perfil+do+Google+de+Brasília.+Pode+me+ajudar?" target="_blank" rel="noopener" class="ml-2">
+                         <!-- SEO: Lazy Loading -->
+                        <img src="logoE.webp" alt="Logo Desenvolvedor" class="h-6 w-auto" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='httpsG://placehold.co/100x24/4A5568/FFFFFF?text=LogoE';">
                     </a>
                 </div>
             </div>
@@ -504,7 +610,7 @@
         });
 
         // Swiper Initialization
-        var swiper = new Swiper('.testimonial-slider', {
+        var swiperTestimonials = new Swiper('.testimonial-slider', { // Renomeado para clareza
             /* loop: true, */ /* Removido para funcionar com slidesPerGroup */
             rewind: true, // Faz o carrossel reiniciar no 'autoplay'
             slidesPerView: 1, // Default: 1 slide no mobile
@@ -534,25 +640,28 @@
             }
         });
 
-        // Lógica do Hero Image Slider
-        (function() {
-            let currentImageIndex = 0;
-            const images = document.querySelectorAll('.hero-slider-image'); 
-            if (images.length === 0) return;
-            const totalImages = images.length;
+        // ADIÇÃO: Swiper Initialization (Hero)
+        var swiperHero = new Swiper('.hero-swiper-container', {
+            loop: true,
+            slidesPerView: 1,
+            effect: 'fade', // Efeito de fade
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                delay: 5000, // 5 segundos
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.hero-swiper-container .swiper-pagination', // Seletor específico
+                clickable: true,
+            },
+        });
 
-            setInterval(() => {
-                if (images[currentImageIndex]) {
-                    images[currentImageIndex].classList.remove('active');
-                }
-                currentImageIndex = (currentImageIndex + 1) % totalImages;
-                if (images[currentImageIndex]) {
-                    images[currentImageIndex].classList.add('active');
-                }
-            }, 5000); // 5 segundos
-        })();
+        // Lógica do Hero Image Slider foi removida
 
     </script>
 </body>
 </html>
+
 
