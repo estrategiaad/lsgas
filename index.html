@@ -220,7 +220,7 @@
             </div>
         </section>
 
-        <!-- 2. Testimonials Section --><section class="py-20 bg-gray-50" id="testimonials">
+        <!-- 2. Testimonials Section --><!-- SEÇÃO RESTAURADA --><section class="py-20 bg-gray-50" id="testimonials">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">O que nossos clientes dizem</h2>
@@ -330,42 +330,42 @@
             </div>
         </section>
       
-        <!-- 3. Features Section --><section id="features" class="py-20 bg-gray-50">
+        <!-- 3. Features Section --><!-- SEÇÃO RESTAURADA --><section id="features" class="py-20 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nossos Produtos</h2>
                     <p class="mt-4 text-lg text-gray-600">Soluções completas em gás GLP para sua casa ou negócio.</p>
                 </div>
 
-                <div class="space-y-8">
-                    <!-- Main Card --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col md:flex-row items-center gap-8" data-aos="fade-up">
-                        <!-- SEO: Lazy Loading --><img src="p13.webp" alt="Botijão de Gás GLP P13" class="w-full md:w-1/3 h-auto rounded-xl object-cover" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x300/0D3B66/FFFFFF?text=Gás+P13';">
-                        <div class="flex-1">
+                <!-- MUDANÇA: O 'space-y-8' foi substituído por um grid de 3 colunas (md:grid-cols-3) para padronizar os cards --><div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card P13 (Agora vertical e parte do grid) --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="0">
+                        <!-- SEO: Lazy Loading --><!-- MUDANÇA: Classes da imagem P13 padronizadas (w-full aspect-square) --><img src="p13.webp" alt="Botijão de Gás GLP P13" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x300/0D3B66/FFFFFF?text=Gás+P13';">
+                        <div class="">
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P13</h3>
                             <p class="text-gray-600 mb-6">O tradicional gás de cozinha, ideal para residências. Seguro, econômico e com a qualidade Supergasbras que você confia.</p>
                             <a href="https://wa.me/556134562117?text=Ol%C3%A1,+vim+do+Site.+Podem+me+ajudar?" target="_blank" rel="noopener" class="text-[#D33100] font-semibold hover:underline">Peça agora &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Secondary Cards --><div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
-                             <!-- SEO: Lazy Loading --><img src="p20.webp" alt="Botijão de Gás GLP P20" class="w-full h-48 rounded-xl object-cover mb-6" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P20';">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P20</h3>
-                            <p class="text-gray-600 mb-6">Perfeito para empilhadeiras, garantindo maior autonomia e eficiência para a sua operação logística.</p>
-                             <a href="https://wa.me/556134562117?text=Ol%C3%A1,+vim+do+Site.+Podem+me+ajudar?" target="_blank" rel="noopener" class="text-[#D33100] font-semibold hover:underline">Saiba mais &rarr;</a>
-                        </div>
-                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
-                            <!-- SEO: Lazy Loading --><img src="p45.webp" alt="Botijão de Gás GLP P45" class="w-full h-48 rounded-xl object-cover mb-6" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P45';">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P45</h3>
-                            <p class="text-gray-600 mb-6">A solução para comércios e indústrias com alto consumo, como restaurantes e padarias. Mais potência e durabilidade.</p>
-                             <a href="https://wa.me/556134562117?text=Ol%C3%A1,+vim+do+Site.+Podem+me+ajudar?" target="_blank" rel="noopener" class="text-[#D33100] font-semibold hover:underline">Consulte &rarr;</a>
-                        </div>
+                    <!-- Card P20 (Agora parte do grid md:grid-cols-3) --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                         <!-- SEO: Lazy Loading --><img src="p20.webp" alt="Botijão de Gás GLP P20" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P20';">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P20</h3>
+                        <p class="text-gray-600 mb-6">Perfeito para empilhadeiras, garantindo maior autonomia e eficiência para a sua operação logística.</p>
+                         <a href="https://wa.me/556134562117?text=Ol%C3%A1,+vim+do+Site.+Podem+me+ajudar?" target="_blank" rel="noopener" class="text-[#D33100] font-semibold hover:underline">Saiba mais &rarr;</a>
+                    </div>
+                    
+                    <!-- Card P45 (Agora parte do grid md:grid-cols-3) --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                        <!-- SEO: Lazy Loading --><img src="p45.webp" alt="Botijão de Gás GLP P45" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P45';">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P45</h3>
+                        <p class="text-gray-600 mb-6">A solução para comércios e indústrias com alto consumo, como restaurantes e padarias. Mais potência e durabilidade.</p>
+                         <a href="https://wa.me/556134562117?text=Ol%C3%A1,+vim+do+Site.+Podem+me+ajudar?" target="_blank" rel="noopener" class="text-[#D33100] font-semibold hover:underline">Consulte &rarr;</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. "Why Choose" Section --><section id="why-choose" class="py-20 bg-white">
+        <!-- 4. "Why Choose" Section -->
+        <!-- 4. "Why Choose" Section --><!-- MUDANÇA: A classe 'bg-white' foi substituída por 'hero-gradient' --><section id="why-choose" class="hero-gradient py-20">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Por que escolher a Líder Gás?</h2>
@@ -600,4 +600,6 @@
     </script>
 </body>
 </html>
+
+
 
