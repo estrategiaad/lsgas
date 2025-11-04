@@ -199,49 +199,21 @@
                         </p>
                     </div>   
                     <div class="relative" data-aos="fade-left" data-aos-delay="200">
-                        <!-- MUDANÇA: A classe 'scale-70' foi MOVIDA para este contêiner (o espaço do carrossel) -->
-                         <div class="aspect-square rounded-2xl shadow-2xl overflow-hidden scale-70">
-                            <!-- MUDANÇA: Container de imagem estática para Swiper Carousel -->
+                        <!-- MUDANÇA: Novo DIV wrapper para controlar o tamanho (75% da largura) e centralizar -->
+                        <div class="w-3/4 mx-auto">
                             <!-- MUDANÇA: A classe 'scale-70' foi REMOVIDA daqui -->
-                            <div id="hero-image-slider" class="relative w-full h-full hero-swiper-container swiper-container">
-                                <div class="swiper-wrapper">
-                                    <!-- Slide 1 -->
-                                    <div class="swiper-slide">
+                             <div class="aspect-square rounded-2xl shadow-2xl overflow-hidden">
+                                <!-- MUDANÇA: Container de imagem estática para Swiper Carousel -->
+                                <div id="hero-image-slider" class="relative w-full h-full hero-swiper-container swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- Slide 1 -->
                                         <img src="gas1.webp" alt="Entrega de gás da Líder Gás em Brasília" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+1';">
                                     </div>
-                                    <!-- Slide 2 -->
-                                    <div class="swiper-slide">
-                                        <img src="gas2.webp" alt="Equipe Líder Gás" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+2';">
-                                    </div>
-                                    <!-- Slide 3 -->
-                                    <div class="swiper-slide">
-                                        <img src="gas3.webp" alt="Botijão Supergasbras P13" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+3';">
-                                    </div>
-                                    <!-- Slide 4 -->
-                                    <div class="swiper-slide">
-                                        <img src="gas4.webp" alt="Atendimento ao cliente Líder Gás" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+4';">
-                                    </div>
-                                    <!-- Slide 5 -->
-                                    <div class="swiper-slide">
-                                        <img src="gas5.webp" alt="Entrega rápida Riacho Fundo" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+5';">
-                                    </div>
-                                    <!-- Slide 6 -->
-                                    <div class="swiper-slide">
-                                        <img src="gas6.webp" alt="Gás para comércio e indústria" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+6';">
-                                    </div>
-                                    <!-- Slide 7 -->
-                                    <div class="swiper-slide">
-                                        <img src="gas7.webp" alt="Qualidade Supergasbras" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+7';">
-                                    </div>
-                                    <!-- Slide 8 -->
-                                    <div class="swiper-slide">
-                                        <img src="gas8.webp" alt="Líder Gás em Águas Claras" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+8';">
-                                    </div>
+                                    <!-- ADIÇÃO: Paginação para o Hero Swiper -->
+                                    <div class="swiper-pagination"></div>
                                 </div>
-                                <!-- ADIÇÃO: Paginação para o Hero Swiper -->
-                                <div class="swiper-pagination"></div>
                             </div>
-                        </div>
+                        </div> <!-- Fim do novo DIV wrapper -->
                     </div>
                 </div>
             </div>
@@ -677,6 +649,7 @@
     </script>
 </body>
 </html>
+
 
 
 
