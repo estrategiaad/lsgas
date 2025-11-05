@@ -477,13 +477,13 @@
 
     <!-- 7. Footer --><footer class="bg-gray-900 text-gray-400">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <!-- MUDANÇA: O grid foi alterado de 3 colunas (md:grid-cols-3) para 2 em tablet (sm:grid-cols-2) e 4 em desktop (lg:grid-cols-4) --><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
-                <div class="mb-6 md:mb-0">
+            <!-- MUDANÇA: 'md:text-left' removido. 'text-center' agora se aplica a todos os tamanhos --><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <!-- MUDANÇA: 'md:mb-0' alterado para 'sm:mb-0' --><div class="mb-6 sm:mb-0">
                     <h4 class="text-lg font-semibold text-white mb-3">Líder Gás - Supergasbras</h4>
                     <p>&copy; 2025 Todos os direitos reservados.</p>
                 </div>
                 
-                <!-- MUDANÇA: O div 'Nossas Unidades' foi dividido em dois, cada um em sua própria coluna --><!-- Coluna Endereço 1 --><div class="mb-6 md:mb-0">
+                <!-- Coluna Endereço 1 --><!-- MUDANÇA: 'md:mb-0' alterado para 'sm:mb-0' --><div class="mb-6 sm:mb-0">
                     <h4 class="text-lg font-semibold text-white mb-3">Unidade Riacho Fundo II</h4>
                     <!-- Endereço 1 --><a href="https://maps.app.goo.gl/5R1T2TsYvGJ2XEWb9" target="_blank" rel="noopener" class="inline-block transition-colors hover:text-white">
                         <p>Riacho Fundo II - 1A Etapa</p>
@@ -492,7 +492,7 @@
                     </a>
                 </div>
                 
-                <!-- Coluna Endereço 2 --><div class="mb-6 md:mb-0">
+                <!-- Coluna Endereço 2 --><!-- MUDANÇA: 'md:mb-0' alterado para 'sm:mb-0' --><div class="mb-6 sm:mb-0">
                      <h4 class="text-lg font-semibold text-white mb-3">Unidade Águas Claras</h4>
                     <!-- Endereço 2 --><a href="https://maps.app.goo.gl/tuRsNYmh8XUKms618" target="_blank" rel="noopener" class="inline-block transition-colors hover:text-white">
                         <p>ADE Águas Claras 10/12</p>
@@ -500,9 +500,9 @@
                     </a>
                 </div>
 
-                <!-- MUDANÇA: Adicionado 'lg:text-right' para alinhar a coluna à direita em desktops --><div class="mb-6 md:mb-0 lg:text-right">
+                <!-- MUDANÇA: 'lg:text-right' removido. 'md:mb-0' alterado para 'sm:mb-0' --><div class="mb-6 sm:mb-0">
                     <h4 class="text-lg font-semibold text-white mb-3">Siga-nos</h4>
-                    <!-- MUDANÇA: Adicionado 'lg:justify-end' para alinhar os links à direita em desktops --><div class="flex space-x-4 justify-center md:justify-start lg:justify-end">
+                    <!-- MUDANÇA: 'md:justify-start lg:justify-end' removido. 'justify-center' agora se aplica --><div class="flex space-x-4 justify-center">
                         <a href="#" class="hover:text-white transition-colors">Instagram</a>
                         <a href="#" class="hover:text-white transition-colors">Facebook</a>
                     </div>
