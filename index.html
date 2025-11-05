@@ -533,7 +533,7 @@
                 <div class="flex justify-center items-center text-sm">
                     <!-- MUDANÇA: Cor do texto alterada (agora com CSS inline) --><span style="color: #D33100;">Desenvolvido por</span>
                     <!-- MUDANÇA: Link do WhatsApp adicionado --><a href="https://wa.me/5561991390058?text=Ol%C3%A1,+vi+que+desenvolvem+sites.+Podem+me+ajudar?+" target="_blank" rel="noopener" class="ml-2">
-                         <!-- SEO: Lazy Loading --><img src="logoE.webp" alt="Logo Desenvolvedor" class="h-6 w-auto" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='httpsG://placehold.co/100x24/4A5568/FFFFFF?text=LogoE';">
+                         <!-- SEO: Lazy Loading --><!-- CORREÇÃO: Erro de digitação 'httpsG' corrigido para 'https' --><img src="logoE.webp" alt="Logo Desenvolvedor" class="h-6 w-auto" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/100x24/4A5568/FFFFFF?text=LogoE';">
                     </a>
                 </div>
             </div>
@@ -572,7 +572,7 @@
             spaceBetween: 16,
             slidesPerGroup: 1, // Default: agrupa de 1 em 1 no mobile
             pagination: {
-                el: '.swiper-pagination',
+                el: '.testimonial-slider .swiper-pagination', // CORREÇÃO: Seletor específico
                 clickable: true,
             },
             autoplay: {
